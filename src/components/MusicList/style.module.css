@@ -1,0 +1,49 @@
+@value colors: "~styles/colors.module.css";
+@value tipsColor, tipsHoverColor, red from colors;
+
+.alias {
+  margin-top: 10px;
+  color: tipsColor;
+}
+
+.operations {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 10px;
+  color: tipsColor;
+
+  .index {
+    width: 40px;
+    margin-right: 6px;
+    text-align: right;
+  }
+
+  .isPlaying {
+    width: 44px;
+    margin-right: 0;
+    text-align: right;
+    color: red;
+  }
+
+  span:nth-child(2) {
+    cursor: pointer;
+
+    &:hover {
+      color: tipsHoverColor;
+    }
+  }
+}
+
+.name {
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-right: 5px;
+  }
+}
+
+.active {
+  color: red;
+}

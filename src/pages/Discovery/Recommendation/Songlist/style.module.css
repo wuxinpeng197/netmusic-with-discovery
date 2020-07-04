@@ -1,0 +1,9 @@
+.root {
+  margin-bottom: -25px;
+}
+
+.songsWrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

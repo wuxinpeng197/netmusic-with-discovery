@@ -1,0 +1,106 @@
+@value colors: "~styles/colors.module.css";
+@value red from colors;
+
+@value constants: "~styles/constants.module.css";
+@value footerHeight, bodyMinWidth from constants;
+
+.root {
+  width: 100%;
+  min-width: bodyMinWidth;
+  height: footerHeight;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  border-top: 2px solid rgb(245, 245, 245);
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.progressBar {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 100%;
+}
+
+.songWrap {
+  display: flex;
+  align-items: center;
+
+  .pic {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .mask {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    display: none;
+  }
+
+  .showLyric:hover .mask {
+    display: block;
+  }
+
+  .hideLyric {
+    display: block;
+  }
+  
+  & img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;;
+    border: none;
+    border-radius: 5px;
+    background-color: #ccc;
+  }
+
+  .info {
+    display: flex;
+    align-items: center;
+
+    .name {
+      margin-right: 5px;
+    }
+  }
+
+  & .time {
+    font-size: 0.85em;
+    color: rgb(179, 179, 179);
+  }
+}
+
+.operations {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.otherOperations {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+
+  .item {
+    margin-left: 15px;
+    color: #888;
+    cursor: pointer;
+
+    & span:focus {
+      outline: none;
+    }
+  }
+}

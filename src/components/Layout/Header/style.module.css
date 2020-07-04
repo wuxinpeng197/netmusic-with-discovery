@@ -1,0 +1,113 @@
+@value constants: "~styles/constants.module.css";
+@value sidebarWidth, headerHeight, bodyMinWidth from constants;
+
+.root {
+  width: 100%;
+  min-width: bodyMinWidth;
+  height: headerHeight;
+  background-color: rgba(248, 248, 248, 0.95);
+  position: fixed;
+  top: 0;
+  display: flex;
+  z-index: 10;
+}
+
+.actions {
+  width: sidebarWidth;
+  height: 100%;
+  position: relative;
+}
+
+.iconsWrap {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  left: 8px;
+
+  .circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    & svg {
+      display: none;
+    }
+  }
+
+  .circle:nth-child(1) {
+    background-color: #ff5652;
+  }
+
+  .circle:nth-child(2) {
+    background-color: #ffb63c;
+  }
+
+  .circle:nth-child(3) {
+    background-color: #00c343;
+  }
+
+  .circle:hover svg {
+    display: block;
+  }
+
+  .down {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+}
+
+.backForward {
+  display: flex;
+  position: absolute;
+  bottom: 15px;
+  right: 10px;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+    border-radius: 50%;
+    color: #383838;
+  }
+
+  div:hover {
+    background-color: #e8e8e8;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - sidebarWidth);
+  padding: 0 20px;
+}
+
+.operations {
+  display: flex;
+  align-items: center;
+}
+
+.githubLogo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-image: url(~assets/image/github-logo.png);
+  background-size: 100% 100%;
+  cursor: pointer;
+}
